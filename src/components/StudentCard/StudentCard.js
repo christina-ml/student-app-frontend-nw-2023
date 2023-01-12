@@ -1,20 +1,23 @@
 const StudentCard = ({ student }) => {
-  const { email, company, firstName, lastName, pic, grades, id, skill } =
-    student;
+  const { city, company, email, firstName, grades, id, lastName, pic, skill } = student;
 
-  // Converted the grades to numbers
-  const numericGrades = grades.map((grade) => Number(grade));
+  const findAverageGrades = (grades) => {
+    // Converted the grades to numbers
+    const numericGrades = grades.map((grade) => Number(grade));
 
-  // Add up all the grades
-  // Init total = 0
-  let total = 0;
-  // For each grade, add grade to total
-  for (const grade of numericGrades) {
-    total += grade;
+    // Add up all the grades
+    // Init total = 0
+    let total = 0;
+    // For each grade, add grade to total
+    for (const grade of numericGrades) {
+      total += grade;
+    }
+
+    // Divide total by number of grades and assign to a var
+    const average = total / numericGrades.length;
+
+    return average.toFixed(2);
   }
-
-  // Divide total by number of grades and assign to a var
-  const average = total / numericGrades.length;
 
   console.log(`<StudentCard /> rendered name=${firstName}`);
   return (
@@ -24,10 +27,11 @@ const StudentCard = ({ student }) => {
         {firstName} {lastName}
       </h1>
       <ul>
+        <li>City: {city}</li>
         <li>Email: {email}</li>
         <li>Company: {company} </li>
         <li>Skill: {skill}</li>
-        <li>Average: {average}%</li>
+        <li>Average: {findAverageGrades(grades)}%</li>
       </ul>
     </div>
   );
