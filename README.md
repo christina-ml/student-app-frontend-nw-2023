@@ -3,7 +3,10 @@
 # QUESTIONS
 
 # THINGS TO DISCUSS
-
+What causes a React component to rerender?
+- The component's parent renders again
+- The component's props change
+- The component's state changes
 
 ## Create React App
 ```
@@ -80,3 +83,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+## QUESTIONS
+Using fetch with async and await?
+What goes into dependency array?
