@@ -1,3 +1,5 @@
+import './StudentCard.scss';
+
 const StudentCard = ({ student }) => {
   const { city, company, email, firstName, grades, id, lastName, pic, skill } = student;
 
@@ -21,18 +23,22 @@ const StudentCard = ({ student }) => {
 
   console.log(`<StudentCard /> rendered name=${firstName}`);
   return (
-    <div key={id}>
-      <img src={pic} alt={`${firstName} ${lastName}`} />
-      <h1>
-        {firstName} {lastName}
-      </h1>
-      <ul>
-        <li>City: {city}</li>
-        <li>Email: {email}</li>
-        <li>Company: {company} </li>
-        <li>Skill: {skill}</li>
-        <li>Average: {findAverageGrades(grades)}%</li>
-      </ul>
+    <div className="StudentCard" key={id}>
+      <div className="StudentCard__avatar" >
+        <img src={pic} alt={`${firstName} ${lastName}`} />
+      </div>
+      <div className="StudentCard__info" >
+        <h1>
+          {firstName} {lastName}
+        </h1>
+        <ul>
+          <li>City: {city}</li>
+          <li>Email: {email}</li>
+          <li>Company: {company} </li>
+          <li>Skill: {skill}</li>
+          <li>Average: {findAverageGrades(grades)}%</li>
+        </ul>
+      </div>
     </div>
   );
 };

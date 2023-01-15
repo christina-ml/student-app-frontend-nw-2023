@@ -1,3 +1,13 @@
+# SASS/ SCSS
+for some reason this does not work (in SCSS documentation):
+```
+npm install -g sass
+```
+but this works (below):
+```
+npm i sass --save-dev
+```
+
 # TODOs
 
 # QUESTIONS

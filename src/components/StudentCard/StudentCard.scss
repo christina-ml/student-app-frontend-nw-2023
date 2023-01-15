@@ -1,0 +1,32 @@
+.StudentCard{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 10px;
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+
+    &__avatar {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        
+        img {
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 100%;
+        }
+    }
+    &__info {
+        h1 {
+            margin: 0;
+            text-transform: uppercase;
+        }
+        ul {
+            padding-inline-start: 16px;
+            color: #777;
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+}
