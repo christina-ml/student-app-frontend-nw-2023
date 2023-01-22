@@ -24,7 +24,7 @@ function App() {
     async function fetchData() {
       try {
         // Remove any errors from previous attempts
-        setError('');
+        setError('ok');
 
         // Show the user that we're loading...
         setLoading(true);
