@@ -20,27 +20,46 @@ function App() {
 
   useEffect(() => {
     console.log("<App /> useEffect() fired");
+
     async function fetchData() {
       try {
+        // Remove any errors from previous attempts
+        setError('');
+
         // Show the user that we're loading...
         setLoading(true);
         const response = await fetch(`${API_URL}/students`);
         const json = await response.json();
+
         console.log("<App /> useEffect() fetched data", json);
-        const { data } = json;
-        setStudentData(data);
-        // Stop showing the user the loading UI...
-        setLoading(false);
+        
+        const { data, error } = json;
+
+        if (response.ok){
+          // handle success
+          setStudentData(data);
+          
+          // Stop showing the user the loading UI...
+          setLoading(false);
+        } else {
+          // handle error
+          setError(error);
+          setLoading(false);
+        }
       } catch (err) {
         console.log(`<App /> useEffect error: ${err.message}`);
-        setLoading(false);
         setError(err.msg);
+        setLoading(false);
       }
     }
     fetchData();
   }, []);
 
-  // rendering our student data
+  // rendering our student data:
+  /* If loading, render <Loading />
+    else if error, render <Error error={error} />
+    else render <StudentList />
+  */
   const renderContent = () => {
     if (loading) {
       return <Loading />;
@@ -52,15 +71,16 @@ function App() {
   };
 
   console.log(`<App /> rendered! num students = ${studentData.length}`);
+  
+  // `center` is a prop of boolean with error or loading
   return (
     <div className="App">
       {/* {loading ? 
         <Loading />
-       : 
+      : 
         <StudentList studentData={studentData} />
-       } */}
+      } */}
 
-       {/* center prop boolean with error or loading */}
       <Container center={Boolean(error || loading)}>
         {renderContent()}
       </Container>

@@ -1,4 +1,3 @@
-import React from 'react';
 import './Error.scss';
 
 const Error = ({ error }) => {
@@ -6,7 +5,7 @@ const Error = ({ error }) => {
 
     return (
         <div className="Error">
-            THere was an error: {error};
+            There was an error: {error};
             <br />
             Please refresh the page or contact support.
         </div>

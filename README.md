@@ -109,3 +109,46 @@ Typescript has to be compiled into JavaScript
 TS => JS => JS that browsers understand => bundle into a single JS file
 
 Adding TypeScript to React: [https://create-react-app.dev/docs/adding-typescript/](https://create-react-app.dev/docs/adding-typescript/)
+
+## Container.js
+/**
+ * memory
+ *             myString     
+ *                |
+ * -- -- -- -- "hello"
+ * 
+ * let myString = "hello"
+ * myString = "bye"
+ * 
+ *                     myString   myArr   
+ *                          |      |
+ * -- -- -- -- "hello" -- "bye" ['hello']
+ * 
+ * const myArr = []
+ * myArr.push("hello") // OK
+ * myArr = ["yo", "bye", "pizza"] // ERROR
+ */
+
+
+/**
+ * difference between 'Container__center' and 'Container--center'?
+ * both are totally fine
+ * CSS convention called Block Element Modifier (BEM)
+ * 
+ * StudentCard__avatar  (left side of the card)
+ * StudentCard__info    (right side of the card)
+ * StudentCard__avatar--center      (`center` is a modifier)
+ * StudentCard__avatar--active      (`active` is a modifier)
+ * 
+ * block__element--modifier
+ * block--modifier
+ */
+
+
+// How it would look in TYPESCRIPT:
+// type ContainerProps {
+//     center: Boolean
+//     children: React.Children
+// }
+
+// const Container = 
