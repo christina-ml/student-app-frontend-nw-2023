@@ -1,9 +1,12 @@
 .App {
     display: grid;
+
+    /* horizontal align */
     justify-content: center;
-    /* horiz */
+
+    /* vertican align */
     align-items: center;
-    /* vert */
+
     height: 100vh;
     background-color: #eee;
 }
