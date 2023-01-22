@@ -99,3 +99,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## QUESTIONS
 Using fetch with async and await?
 What goes into dependency array?
+
+## TypeScript
+Why is TypeScript considered a stronger typing system vs JavaScript?
+"TS is a superset of JS"
+Other stuff in TS == defining the types of your variables, arguments, and return types, and component props
+Typescript has to be compiled into JavaScript
+
+TS => JS => JS that browsers understand => bundle into a single JS file
+
+Adding TypeScript to React: [https://create-react-app.dev/docs/adding-typescript/](https://create-react-app.dev/docs/adding-typescript/)
