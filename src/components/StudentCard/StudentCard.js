@@ -21,7 +21,7 @@ const StudentCard = ({ student }) => {
     return average.toFixed(2);
   }
 
-  console.log(`<StudentCard /> rendered name=${firstName}`);
+  // console.log(`<StudentCard /> rendered name=${firstName}`);
   return (
     <div className="StudentCard" key={id}>
       <div className="StudentCard__avatar" >

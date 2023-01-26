@@ -1,3 +1,9 @@
+# Goals
+1. Filter list by input
+2. Handleno results situation
+3. Input styling and any other styling
+
+
 # SASS/ SCSS
 for some reason this does not work (in SCSS documentation):
 ```
