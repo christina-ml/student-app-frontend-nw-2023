@@ -66,7 +66,7 @@ const StudentList = ({ studentData }) => {
         <input 
           value={searchInput}
           type="text" 
-          placeholder="search by name"
+          placeholder="Search by name"
           onChange={handleChange}
         />
       </div>
