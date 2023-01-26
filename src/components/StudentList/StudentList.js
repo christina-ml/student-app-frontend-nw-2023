@@ -34,23 +34,29 @@ const StudentList = ({ studentData }) => {
   //     show "no results for {searchInput}"
   //     Else: render student cards 
      
+
   const renderContent = () => {
+    // `contentClassName` for array of classnames
+    let contentClassName = 'StudentList__content';
+    
     if (dataToDisplay.length === 0){
-      return `No results for ${searchInput}`;
+      contentClassName += ' StudentList__content--center';
+
+      return (
+        <div className={contentClassName}>
+          No results for {searchInput}
+        </div>
+      )
     } else {
       return (
-        dataToDisplay.map((student) => (
-          <StudentCard key={student.id} student={student} />
-        ))
-      )
+        <div className={contentClassName}>
+          {dataToDisplay.map((student) => (
+            <StudentCard key={student.id} student={student} />
+          ))}
+        </div>
+      );
     }
-  }
-
-  // array of classnames
-  let contentClassName = 'StudentList__content';
-  if (dataToDisplay.length === 0) {
-    contentClassName += " StudentList__content--center";
-  }
+  };
 
 
   // console.log(`<StudentList/> rendered! search input: ${searchInput}`)
@@ -64,9 +70,9 @@ const StudentList = ({ studentData }) => {
           onChange={handleChange}
         />
       </div>
-      <div className={contentClassName}>
+      
         {renderContent()}
-      </div>
+      
     </div>
   );
 };
