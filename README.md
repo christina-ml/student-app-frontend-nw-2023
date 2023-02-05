@@ -1,3 +1,20 @@
+# STEPS 2-5-23
+show/hide
+1. craete the expanded state
+2. render the grades only if expanded is true; otherwise do not show
+3. toggle the expanded state when the user clicks the button
+
+button
+4. use a ternary or conditional to set the text in the <button>
+5. the text you render should depend on the expanded state
+6. use react icons for the button text
+
+## QUESTIONS
+
+
+
+---
+
 # Goals
 1. Filter list by input
 2. Handleno results situation

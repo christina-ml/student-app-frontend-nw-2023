@@ -1,7 +1,12 @@
+import { useState } from 'react';
+import StudentGrades from '../StudentGrades/StudentGrades';
 import './StudentCard.scss';
 
 const StudentCard = ({ student }) => {
   const { city, company, email, firstName, grades, id, lastName, pic, skill } = student;
+
+  // hiding and showing grades
+  const [showGrades, setShowGrades] = useState(false);
 
   const findAverageGrades = (grades) => {
     // Converted the grades to numbers
@@ -38,6 +43,14 @@ const StudentCard = ({ student }) => {
           <li>Skill: {skill}</li>
           <li>Average: {findAverageGrades(grades)}%</li>
         </ul>
+        {showGrades && <StudentGrades grades={grades} />}
+        <button 
+          onClick={() => {
+            setShowGrades(!showGrades)
+          }}
+        >
+          Click me
+        </button>
       </div>
     </div>
   );
