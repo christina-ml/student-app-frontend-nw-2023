@@ -21,32 +21,45 @@ TODOS:
 
 2. Implement filtering
     2a. Do the filtering in the body of FilterableList
-    
+
 
 */
 
 
 
+import { useState } from 'react';
+import { foods, filterItems } from './data.js';
+
 export default function FilterableList() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
+
+  const dataToDisplay = filterItems(foods, query);
+  
+  return (
+    <>
+      <SearchBar 
+        query={query} 
+        setQuery={setQuery} 
+      />
+      <hr />
+      <List items={dataToDisplay} />
+    </>
+  );
+}
+
+function SearchBar({ query, setQuery }) {
 
   function handleChange(e) {
     setQuery(e.target.value);
   }
 
   return (
-    <>
-      <SearchBar query={query} handleChange={handleChange} />
-      <hr />
-      <List items={filterItems(foods, query)} />
-    </>
-  );
-}
-
-function SearchBar({ query, handleChange }) {
-  return (
     <label>
-      Search: <input value={query} onChange={handleChange} />
+      Search:{' '}
+      <input
+        value={query}
+        onChange={handleChange}
+      />
     </label>
   );
 }
@@ -55,7 +68,7 @@ function List({ items }) {
   return (
     <table>
       <tbody>
-        {items.map((food) => (
+        {items.map(food => (
           <tr key={food.id}>
             <td>{food.name}</td>
             <td>{food.description}</td>
