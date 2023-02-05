@@ -7,6 +7,12 @@
 
     button {
         height: 50px;
+        border: none;
+        background: none;
+        padding: 0;
+        font-size: 25px;
+        color: grey;
+        cursor: pointer;
     }
 
     &__avatar {

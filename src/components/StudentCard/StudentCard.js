@@ -2,6 +2,8 @@ import { useState } from 'react';
 import StudentGrades from '../StudentGrades/StudentGrades';
 import './StudentCard.scss';
 
+import { FaPlus, FaMinus } from 'react-icons/fa';
+
 const StudentCard = ({ student }) => {
   const { city, company, email, firstName, grades, id, lastName, pic, skill } = student;
 
@@ -50,7 +52,7 @@ const StudentCard = ({ student }) => {
           setShowGrades(!showGrades)
         }}
       >
-        {showGrades ? '-': '+'}
+        {showGrades ? <FaMinus /> : <FaPlus />}
       </button>
     </div>
   );
