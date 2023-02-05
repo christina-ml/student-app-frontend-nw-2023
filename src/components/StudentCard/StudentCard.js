@@ -44,14 +44,14 @@ const StudentCard = ({ student }) => {
           <li>Average: {findAverageGrades(grades)}%</li>
         </ul>
         {showGrades && <StudentGrades grades={grades} />}
-        <button 
-          onClick={() => {
-            setShowGrades(!showGrades)
-          }}
-        >
-          Click me
-        </button>
       </div>
+      <button 
+        onClick={() => {
+          setShowGrades(!showGrades)
+        }}
+      >
+        {showGrades ? '-': '+'}
+      </button>
     </div>
   );
 };
