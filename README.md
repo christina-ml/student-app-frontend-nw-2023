@@ -43,6 +43,14 @@ Why can't the `expanded` state be a boolean in the StudentList? The `expaned` st
 
 For KEYS: Use the ID for a key, not the indexes from the .map()
 
+
+### after lifting state up, todo: make expand all collapse all buttons
+Clicking the button should open everyone's cards
+- Update the state so all ids are in the array
+Clicking again should close everyone's cards
+- Update the state so no ids are in the araay
+
+
 # STEPS 2-5-23
 show/hide
 1. craete the expanded state

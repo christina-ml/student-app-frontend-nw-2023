@@ -30,6 +30,19 @@ const StudentList = ({ studentData }) => {
     }
   }
 
+  // Expand all cards
+  const handleExpandAll = () => {
+    // replace the expanded state with an array that has all the ids
+    // (all the ids = all the ids in studentData)
+    const allIds = studentData.map((student) => student.id);
+    setExpanded(allIds);
+  }
+
+  // Collapse all cards
+  const handleCollapseAll = () => {
+    setExpanded([]);
+  }
+
 
   console.log(`<StudentList /> rendered!`);
   // when I type in the input, I should see filtered results by name
@@ -103,10 +116,10 @@ const StudentList = ({ studentData }) => {
           placeholder="Search by name"
           onChange={handleChange}
         />
+        <button onClick={handleExpandAll}>Expand All</button>
+        <button onClick={handleCollapseAll}>Collapse All</button>
       </div>
-      
         {renderContent()}
-      
     </div>
   );
 };
