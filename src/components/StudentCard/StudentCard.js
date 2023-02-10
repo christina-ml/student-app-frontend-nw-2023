@@ -43,7 +43,7 @@ const StudentCard = ({ student, expanded, setExpanded }) => {
           <li>Skill: {skill}</li>
           <li>Average: {findAverageGrades(grades)}%</li>
         </ul>
-        {expanded && <StudentGrades grades={grades} />}
+        {expanded && <StudentGrades grades={grades}  />}
       </div>
       <button 
         onClick={() => {

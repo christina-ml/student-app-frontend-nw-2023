@@ -34,6 +34,15 @@ Lifting state up:
 
 Question to ask: When lifting state, how do you refactor the data type of the parent state?
 
+Why can't the `expanded` state be a boolean in the StudentList? The `expaned` state needs to keep track of if it's true or false for every individual student card, so Ingaberg and Laurens could be true, but Clarke could be false.
+- 2 approaches:
+    1. array of ids []
+    - if the id is in the array, then we should expand the card for that student.
+    Example: ["1", "3"] would expand only Ingaberg and Laurens cards.
+    2. Can be done with an object, and may be more efficient, but using an array is more common.
+
+For KEYS: Use the ID for a key, not the indexes from the .map()
+
 # STEPS 2-5-23
 show/hide
 1. craete the expanded state

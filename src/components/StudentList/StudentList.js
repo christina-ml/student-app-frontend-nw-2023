@@ -4,9 +4,13 @@ import './StudentList.scss';
 
 const StudentList = ({ studentData }) => {
 
-  // lifted state here: hiding and showing grades
-  // Keep track of which students should have expanded cards
-  const [expanded, setExpanded] = useState(false);
+  /**
+   * lifted state here: hiding and showing grades
+   * Keep track of which students should have expanded cards
+   * Possible data types:
+   * - array of ids ["1", "3"] // expands only students with ids 1 & 3
+   */
+  const [expanded, setExpanded] = useState([]);
 
   console.log(`<StudentList /> rendered!`);
   // when I type in the input, I should see filtered results by name
@@ -55,11 +59,12 @@ const StudentList = ({ studentData }) => {
     } else {
       return (
         <div className={contentClassName}>
+          {/* if the current student's id is in the expanded array, the expanded prop sould be true; else false */}
           {dataToDisplay.map((student) => (
             <StudentCard 
               key={student.id} 
               student={student} 
-              expanded={expanded}
+              expanded={expanded.includes(student.id)}
               setExpanded={setExpanded}
             />
           ))}
