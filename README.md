@@ -1,3 +1,39 @@
+# 2-8-23
+# Lifting state up: preview
+## GOALS
+1. Fix the bug where we forget a card's expanded state
+2. Build Exapnd All / Collapse All buttons
+
+## Steps to reproduce bug
+
+1. Expand Ingaberg's grades
+2. Search for `cl`
+3. Ingaberg's card is removed from results
+4. Delete search term so that Ingaberg is shown in results.
+
+**Expected** Ingaberg's card is still expanded.
+**Actual** Ingaberg's card is collapsed.
+
+Notes:
+- We are moving the control over the state from inside the cards, to having the state be in the student list.
+- The student list will control whether or not we keep the card expanded or not.
+
+Lifting state up:
+## Steps to lift state up
+1. Move state from child to parent and replace with props
+    1a. If child has user interaction, pass handler as props from parent to child
+    Examples: 
+        - if the child has an input that we type in;
+        - if the child has a button that we click
+        - if the child has some other thing where user input creates an event that we care about
+    WHY: The child had control of updating the state, but we want to update the parent's state instead.
+2. Refactor the data type of parent state.
+    WHY: The parent might have a different job to do than the child, because it has to control the state of many children; instead of controlling the state of just one child.
+3. Refactor how the "state prop" is passed to child.
+
+
+Question to ask: When lifting state, how do you refactor the data type of the parent state?
+
 # STEPS 2-5-23
 show/hide
 1. craete the expanded state
@@ -10,8 +46,6 @@ button
 6. use react icons for the button text
 
 ## QUESTIONS
-
-
 
 ---
 

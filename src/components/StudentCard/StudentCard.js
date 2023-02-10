@@ -1,14 +1,12 @@
-import { useState } from 'react';
 import StudentGrades from '../StudentGrades/StudentGrades';
 import './StudentCard.scss';
 
 import { FaPlus, FaMinus } from 'react-icons/fa';
 
-const StudentCard = ({ student }) => {
+const StudentCard = ({ student, expanded, setExpanded }) => {
   const { city, company, email, firstName, grades, id, lastName, pic, skill } = student;
 
-  // hiding and showing grades
-  const [showGrades, setShowGrades] = useState(false);
+  // removed state of `showGrades`(mike used "expanded") to "lift state" into parent component `<StudentList.js/>`
 
   const findAverageGrades = (grades) => {
     // Converted the grades to numbers
@@ -45,14 +43,14 @@ const StudentCard = ({ student }) => {
           <li>Skill: {skill}</li>
           <li>Average: {findAverageGrades(grades)}%</li>
         </ul>
-        {showGrades && <StudentGrades grades={grades} />}
+        {expanded && <StudentGrades grades={grades} />}
       </div>
       <button 
         onClick={() => {
-          setShowGrades(!showGrades)
+          setExpanded(!expanded)
         }}
       >
-        {showGrades ? <FaMinus /> : <FaPlus />}
+        {expanded ? <FaMinus /> : <FaPlus />}
       </button>
     </div>
   );

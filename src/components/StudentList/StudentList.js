@@ -3,6 +3,11 @@ import StudentCard from '../StudentCard/StudentCard';
 import './StudentList.scss';
 
 const StudentList = ({ studentData }) => {
+
+  // lifted state here: hiding and showing grades
+  // Keep track of which students should have expanded cards
+  const [expanded, setExpanded] = useState(false);
+
   console.log(`<StudentList /> rendered!`);
   // when I type in the input, I should see filtered results by name
   const [searchInput, setSearchInput] = useState("");
@@ -51,7 +56,12 @@ const StudentList = ({ studentData }) => {
       return (
         <div className={contentClassName}>
           {dataToDisplay.map((student) => (
-            <StudentCard key={student.id} student={student} />
+            <StudentCard 
+              key={student.id} 
+              student={student} 
+              expanded={expanded}
+              setExpanded={setExpanded}
+            />
           ))}
         </div>
       );
