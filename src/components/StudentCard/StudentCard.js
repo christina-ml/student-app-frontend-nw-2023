@@ -3,7 +3,7 @@ import './StudentCard.scss';
 
 import { FaPlus, FaMinus } from 'react-icons/fa';
 
-const StudentCard = ({ student, expanded, setExpanded }) => {
+const StudentCard = ({ student, expanded, onClick }) => {
   const { city, company, email, firstName, grades, id, lastName, pic, skill } = student;
 
   // removed state of `showGrades`(mike used "expanded") to "lift state" into parent component `<StudentList.js/>`
@@ -45,11 +45,7 @@ const StudentCard = ({ student, expanded, setExpanded }) => {
         </ul>
         {expanded && <StudentGrades grades={grades}  />}
       </div>
-      <button 
-        onClick={() => {
-          setExpanded(!expanded)
-        }}
-      >
+      <button onClick={onClick}>
         {expanded ? <FaMinus /> : <FaPlus />}
       </button>
     </div>

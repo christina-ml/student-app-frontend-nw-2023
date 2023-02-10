@@ -12,6 +12,25 @@ const StudentList = ({ studentData }) => {
    */
   const [expanded, setExpanded] = useState([]);
 
+
+  const handleToggleExpanded = (id) => {
+    // be careful not to mutate the state -- use copies of expanded array
+    // if the id is not in the expanded array, add it to the array
+    if (!expanded.includes(id)){
+      // add it to a copy of the expanded array
+      // take all the things currently in our array, and then add 1 last element which is the `id`
+      const newExpanded = [...expanded, id]
+      setExpanded(newExpanded);
+    } else {
+      // remove the id from a copy of the expanded array
+        // - we are making a copy of the array that includes everything except for the `id` 
+        // - the array will have everything except for the thing we want to remove
+      const removed = expanded.filter((currId) => currId !== id);
+      setExpanded(removed);
+    }
+  }
+
+
   console.log(`<StudentList /> rendered!`);
   // when I type in the input, I should see filtered results by name
   const [searchInput, setSearchInput] = useState("");
@@ -65,7 +84,7 @@ const StudentList = ({ studentData }) => {
               key={student.id} 
               student={student} 
               expanded={expanded.includes(student.id)}
-              setExpanded={setExpanded}
+              onClick={() => handleToggleExpanded(student.id)}
             />
           ))}
         </div>
