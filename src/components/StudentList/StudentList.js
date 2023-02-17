@@ -109,7 +109,7 @@ const StudentList = ({ studentData }) => {
   // console.log(`<StudentList/> rendered! search input: ${searchInput}`)
   return (
     <div className="StudentList">
-      <div className="StudentList__input">
+      <div className="StudentList__controls">
         <input 
           value={searchInput}
           type="text" 

@@ -3,8 +3,11 @@
     height: 80vh;
     background-color: #fff;
     border-radius: 8px;
-    overflow-y: scroll;
     box-shadow: 0px 0px 5px black;
+
+    &--scroll {
+        overflow-y: scroll;
+    }
 
     &--center {
         display: grid;
