@@ -1,3 +1,7 @@
+## Deployed backend link on Render:
+2-22-23 this is the deployed backend - this repo is a copy of Mike's repo
+[https://student-app-be-nw-copy.onrender.com](https://student-app-be-nw-copy.onrender.com)
+
 # 2-8-23
 # Lifting state up: preview
 ## GOALS

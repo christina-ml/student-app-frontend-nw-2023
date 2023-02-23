@@ -11,6 +11,7 @@ import Container from "./components/Container/Container";
  */
 
 // TODO: Get this value from .env
+// in .env is deployed backend link from Render
 const API_URL = process.env.REACT_APP_API_URL;
 
 function App() {
