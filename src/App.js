@@ -29,7 +29,7 @@ function App() {
 
         // Show the user that we're loading...
         setLoading(true);
-        const response = await fetch(`${API_URL}/students`);
+        const response = await fetch(`${API_URL}/v2/students?include=grades`);
         const json = await response.json();
 
         console.log("<App /> useEffect() fetched data", json);
