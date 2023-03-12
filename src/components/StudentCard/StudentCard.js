@@ -10,7 +10,7 @@ const StudentCard = ({ student, expanded, onClick }) => {
 
   const findAverageGrades = (grades) => {
     // Converted the grades to numbers
-    const numericGrades = grades.map((grade) => Number(grade));
+    const numericGrades = grades.map((grade) => Number(grade.score));
 
     // Add up all the grades
     // Init total = 0

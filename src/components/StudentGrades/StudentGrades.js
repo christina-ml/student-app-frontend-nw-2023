@@ -6,7 +6,7 @@ const StudentGrades = ({grades}) => {
     <div>
         <ul>
             {grades.map((grade, index) => (
-                <li>Test {index + 1} {grade}%</li>
+                <li>Test {index + 1} {grade.score}%</li>
             ))}
         </ul>
     </div>
